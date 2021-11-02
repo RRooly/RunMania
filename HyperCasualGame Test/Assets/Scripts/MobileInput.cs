@@ -64,14 +64,14 @@ public class MobileInput : MonoBehaviour
             {
                 swipeDelta = Input.touches[0].position - startTouch;
             }
-            else if (Input.GetMouseButtonDown(0))
+            else if (Input.GetMouseButton(0))
             {
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
             }
         }
 
         //Did we cross the deadzone ?
-        if (swipeDelta.magnitude > 125)
+        if (swipeDelta.magnitude > DEADZONE)
         {
 
             //Which direction ?

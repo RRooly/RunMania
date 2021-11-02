@@ -20,6 +20,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        //Gather the inputs on which lane we should be
+        if (MobileInput.Instance.SwipeLeft)
+        {
+            SwitchLane(false);
+        }
+        if (MobileInput.Instance.SwipeRight)
+        {
+            SwitchLane(true);
+        }
 
         //move left
         if (Input.GetKeyDown("q"))
