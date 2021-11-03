@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = 60;
-        healthBar.SetMaxHelth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     {
         IsRunning = 0;
         yield return new WaitForSeconds(NumberofSeconds); 
-        TakeDamage(20);
+        TakeDamage(10);
         IsRunning = 1;
     }
 
