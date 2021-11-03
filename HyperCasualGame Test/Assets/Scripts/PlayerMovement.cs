@@ -6,8 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private CharacterController controller;
-    public float speed = 10f;
-    private const float LANE_DISTANCE = 4f;
+    public float forwardSpeed = 10f;
+    public float slideSpeed = 10f;
+    private const float LANE_DISTANCE = 5f;
     public int desiredLane = 1; //0=left ; 1=middle ; 2=right
 
     // Start is called before the first frame update
@@ -55,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 moveVector = Vector3.zero;
-        moveVector.x = (targetPosition - transform.position).x * speed;
+        moveVector.x = (targetPosition - transform.position).x * slideSpeed;
         moveVector.y = -0.1f;
-        moveVector.z = speed;
+        moveVector.z = forwardSpeed;
 
         //Move the character
         controller.Move(moveVector * Time.deltaTime);

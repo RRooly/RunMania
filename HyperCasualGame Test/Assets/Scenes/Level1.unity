@@ -258,7 +258,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1061}
-  m_SizeDelta: {x: 317.9828, y: 47.478485}
+  m_SizeDelta: {x: 581.31177, y: 92.87689}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202729376
 MonoBehaviour:
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f511706d2cfc7ef4eb9f8da3c35ba63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 70
   desiredLane: 1
 --- !u!143 &957344744
 CharacterController:
@@ -1139,7 +1139,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 81.25, y: 75}
+  m_SizeDelta: {x: 139.0575, y: 127.78076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1551861875
 MonoBehaviour:
