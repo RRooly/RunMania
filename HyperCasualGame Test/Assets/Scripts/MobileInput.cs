@@ -10,6 +10,8 @@ public class MobileInput : MonoBehaviour
     private bool isDragging = false;
     private Vector2 startTouch, swipeDelta;
 
+    private Animator animator;
+
     public Vector2 SwipeDelta { get { return swipeDelta; } }
     public bool SwipeLeft { get { return swipeLeft; } }
     public bool SwipeRight { get { return swipeRight; } }
@@ -19,6 +21,11 @@ public class MobileInput : MonoBehaviour
 
         Instance = this;
 
+    }
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -46,11 +53,13 @@ public class MobileInput : MonoBehaviour
             {
                 tap = true;
                 isDragging = true;
+                
                 startTouch = Input.mousePosition;
             }
             else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
             {
                 isDragging = false;
+                
                 Reset();
             }
         }
@@ -84,11 +93,14 @@ public class MobileInput : MonoBehaviour
                 if (x < 0)
                 {
                     swipeLeft = true;
+                    
 
                 }
                 else
                 {
                     swipeRight = true;
+                   
+
                 }
             }
             Reset();
@@ -98,5 +110,8 @@ public class MobileInput : MonoBehaviour
     void Reset()
     {
         startTouch = swipeDelta = Vector2.zero;
+        animator.SetBool("swipeLeft", false);
+        animator.SetBool("swipeRight", false);
+
     }
 }

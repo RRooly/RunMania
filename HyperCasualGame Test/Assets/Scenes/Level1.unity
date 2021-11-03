@@ -256,8 +256,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 20.75
+  m_Height: 4.96
+  m_Radius: 25.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -294,7 +294,20 @@ MonoBehaviour:
   currentHealth: 100
   healthBar: {fileID: 202729376}
   IsRunning: 1
-  NumberofSeconds: 0
+  NumberofSeconds: 2
+--- !u!65 &189970155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189970148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.007374, y: 96.97511, z: 22.371004}
+  m_Center: {x: 0.20888925, y: 47.987564, z: -6.7321196}
 --- !u!1 &202729374
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _cyborg_base
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3f27a5aa7f5b86b41870fa4d6228e254, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3f27a5aa7f5b86b41870fa4d6228e254, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -462,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3f27a5aa7f5b86b41870fa4d6228e254, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3f27a5aa7f5b86b41870fa4d6228e254, type: 3}
       propertyPath: m_LocalPosition.z
@@ -763,8 +780,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.06, y: 6.46, z: 3.57}
+  m_LocalScale: {x: 1, y: 6.9743733, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private CharacterController controller;
+    private Animator animator;
     public float forwardSpeed = 10f;
     public float slideSpeed = 10f;
     private const float LANE_DISTANCE = 5f;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,10 +27,14 @@ public class PlayerMovement : MonoBehaviour
         if (MobileInput.Instance.SwipeLeft)
         {
             SwitchLane(false);
+            animator.SetBool("swipeLeft", true);
+
         }
         if (MobileInput.Instance.SwipeRight)
         {
             SwitchLane(true);
+            animator.SetBool("swipeRight", true);
+
         }
 
         //move left
@@ -64,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(moveVector * Time.deltaTime);
 
     }
+
+    
+    
 
     private void SwitchLane(bool goingRight)
     {
