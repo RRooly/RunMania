@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private CharacterController controller;
-    public float speed = 7f;
-    private const float LANE_DISTANCE = 7f;
+    public float speed = 10f;
+    private const float LANE_DISTANCE = 4f;
     public int desiredLane = 1; //0=left ; 1=middle ; 2=right
 
     // Start is called before the first frame update
