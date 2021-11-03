@@ -9,7 +9,9 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public int IsRunning = 1;
-    public int NumberofSeconds; 
+    public int NumberofSeconds;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class Player : MonoBehaviour
     {
         IsRunning = 0;
         yield return new WaitForSeconds(NumberofSeconds); 
-        TakeDamage(10);
+        TakeDamage(15);
         IsRunning = 1;
     }
 
@@ -43,10 +45,19 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-           
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 
+    void Heal(int heal)
+    {
+        currentHealth += heal;
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth >= maxHealth)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
 
 
 }
