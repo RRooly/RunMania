@@ -5,34 +5,57 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {
     //Create a list that contain the position of our spawners
-    public Transform[] Position;
-    public GameObject gameObject;
+    public Transform[] PickUpPosition;
+    public Transform[] SpeedBoostPosition;
 
-    public Transform Location;
+    public GameObject PickUpObject;
+    public GameObject SpeedObject;
+
+    public Transform PickUpLocation;
+    public Transform SpeedBoostLocation;
 
     public bool toSpawn = true;
+    public bool SpeedSpawn = true;
 
     void Start()
     {
-        Location = Position[Random.Range(0, Position.Length)];
+        PickUpLocation = PickUpPosition[Random.Range(0, PickUpPosition.Length)];
+        SpeedBoostLocation = SpeedBoostPosition[Random.Range(0, SpeedBoostPosition.Length)];
         
     }
     void Update()
     {
-        StartCoroutine(Spawn());
+        StartCoroutine(PickUpSpawn());
+        StartCoroutine(BoostSpawn());
     }
 
-    IEnumerator Spawn()
+    IEnumerator PickUpSpawn()
     {
-        Location = Position[Random.Range(0, Position.Length)];
+        PickUpLocation = PickUpPosition[Random.Range(0, PickUpPosition.Length)];
 
         if (toSpawn)
         {
 
-            Instantiate(gameObject, Location);
+            Instantiate(PickUpObject, PickUpLocation);
             toSpawn = false;
             yield return new WaitForSeconds(1);
             toSpawn = true;
+
+        }
+        
+    }
+    
+    IEnumerator BoostSpawn()
+    {
+        SpeedBoostLocation = SpeedBoostPosition[Random.Range(0, SpeedBoostPosition.Length)];
+
+        if (SpeedSpawn)
+        {
+            SpeedSpawn = false;
+            yield return new WaitForSeconds(5);       
+            Instantiate(SpeedObject, SpeedBoostLocation);   
+            yield return new WaitForSeconds(10);      
+            SpeedSpawn = true;
 
         }
         

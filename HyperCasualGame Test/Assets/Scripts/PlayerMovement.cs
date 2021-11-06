@@ -7,17 +7,20 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Animator animator;
-    public float forwardSpeed = 10f;
-    public float slideSpeed = 10f;
-    private const float LANE_DISTANCE = 5f;
+    public float forwardSpeed = 70;
+    public float slideSpeed = 10;
+    private const float LANE_DISTANCE = 5;
     public int desiredLane = 1; //0=left ; 1=middle ; 2=right
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-    }
+        
+}
 
     // Update is called once per frame
     void Update()
@@ -41,12 +44,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("q"))
         {
             SwitchLane(false);
+            animator.SetBool("swipeLeft", true);
         }
 
         //move right
         if (Input.GetKeyDown("d"))
         {
             SwitchLane(true);
+            animator.SetBool("swipeRight", true);
         }
 
         //Calculate the next position
@@ -61,18 +66,16 @@ public class PlayerMovement : MonoBehaviour
             targetPosition += Vector3.right * LANE_DISTANCE;
         }
 
+
+
         Vector3 moveVector = Vector3.zero;
         moveVector.x = (targetPosition - transform.position).x * slideSpeed;
-        
         moveVector.z = forwardSpeed;
 
         //Move the character
         controller.Move(moveVector * Time.deltaTime);
 
     }
-
-    
-    
 
     private void SwitchLane(bool goingRight)
     {

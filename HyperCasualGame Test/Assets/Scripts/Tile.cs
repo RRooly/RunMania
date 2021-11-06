@@ -15,6 +15,6 @@ public class Tile : MonoBehaviour
     private void OnTriggerExit(Collider collide)
     {
         tilespawner.SpawnTile();
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
     }
 }

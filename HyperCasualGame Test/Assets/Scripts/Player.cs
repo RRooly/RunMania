@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     public int IsRunning = 1;
     public int NumberofSeconds;
 
-    
+    public ParticleSystem speedSpark;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Heal(int heal)
+    public void Heal(int heal)
     {
         currentHealth += heal;
         healthBar.SetHealth(currentHealth);
@@ -59,12 +61,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collide)
+    public void LaunchParticle()
     {
-        if (collide.CompareTag("Heal"))
-        {
-            Heal(10);        
-            Destroy(collide.gameObject);
-        }
+        speedSpark.Play();
     }
+    
 }

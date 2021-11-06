@@ -6,12 +6,15 @@ public class PickUp : MonoBehaviour
 {
 
     public Rigidbody rb;
-    public float forwardForce = 5000f;
+    public float forwardForce = 5000;
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
         
     }
 
@@ -21,5 +24,13 @@ public class PickUp : MonoBehaviour
         rb.AddForce(0,0, -forwardForce * Time.deltaTime);
     }
 
-    
+    public void OnTriggerExit(Collider collide)
+    {
+        if (collide.CompareTag("Player"))
+        {
+            FindObjectOfType<Player>().Heal(10);
+            Destroy(gameObject);
+        }
+    }
+
 }
