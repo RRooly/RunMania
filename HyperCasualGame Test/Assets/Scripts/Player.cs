@@ -59,5 +59,12 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerExit(Collider collide)
+    {
+        if (collide.CompareTag("Heal"))
+        {
+            Heal(10);        
+            Destroy(collide.gameObject);
+        }
+    }
 }
