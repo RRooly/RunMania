@@ -15,10 +15,11 @@ public class RandomSpawn : MonoBehaviour
     void Start()
     {
         Location = Position[Random.Range(0, Position.Length)];
+        
     }
     void Update()
     {
-     StartCoroutine(Spawn());
+        StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn()

@@ -20,4 +20,6 @@ public class PickUp : MonoBehaviour
     {
         rb.AddForce(0,0, -forwardForce * Time.deltaTime);
     }
+
+
 }
