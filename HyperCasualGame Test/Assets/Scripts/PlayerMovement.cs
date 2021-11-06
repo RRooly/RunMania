@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveVector = Vector3.zero;
         moveVector.x = (targetPosition - transform.position).x * slideSpeed;
-        moveVector.y = -0.1f;
+        
         moveVector.z = forwardSpeed;
 
         //Move the character
