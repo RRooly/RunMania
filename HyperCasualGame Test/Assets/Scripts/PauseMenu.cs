@@ -40,10 +40,4 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-
-    void OnApplicationPause()
-    {
-        gameIsPaused = true;
-        Time.timeScale = 0;
-    }
 }

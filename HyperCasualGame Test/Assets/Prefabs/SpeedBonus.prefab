@@ -93,8 +93,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.56001526
+  m_Center: {x: 0.014511148, y: 0, z: 0}
 --- !u!114 &4705450213016088250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681068c343989bf4a8021ad067bb826f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedSpark: {fileID: 0}
   rb: {fileID: 0}
   forwardForce: 5000
 --- !u!54 &5307742565855981419
@@ -125,4 +124,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
