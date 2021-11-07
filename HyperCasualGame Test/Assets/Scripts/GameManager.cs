@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
 {
 
     bool gameHasEnded = false;
-    
+    public GameObject gameEndUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,17 +27,9 @@ public class GameManager : MonoBehaviour
         if (!gameHasEnded)
         {
             gameHasEnded = true;
-            Debug.Log("Redemarage dans 3, 2, 1");
-            StartCoroutine(Restart());
-            
+            Time.timeScale = 0;
+            gameEndUI.SetActive(true);
         }
         
-    }
-
-    IEnumerator Restart()
-    {
-        yield return new WaitForSeconds(3f);
-        Debug.Log("Redemarage du niveau");
-        SceneManager.LoadScene("Level1");
     }
 }
